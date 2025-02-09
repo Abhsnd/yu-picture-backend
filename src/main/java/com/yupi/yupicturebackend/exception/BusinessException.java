@@ -10,24 +10,24 @@ import lombok.Getter;
  */
 
 @Getter
-public class BusinessExeption extends RuntimeException{
+public class BusinessException extends RuntimeException{
 
     /**
      * 错误码
      */
     private final int code;
 
-    public BusinessExeption(int code, String message) {
+    public BusinessException(int code, String message) {
         super(message);
         this.code = code;
     }
 
-    public BusinessExeption(ErrorCode errorCode) {
+    public BusinessException(ErrorCode errorCode) {
         super(errorCode.getMessage());
         this.code = errorCode.getCode();
     }
 
-    public BusinessExeption(ErrorCode errorCode, String message) {
+    public BusinessException(ErrorCode errorCode, String message) {
         super(message);
         this.code = errorCode.getCode();
     }

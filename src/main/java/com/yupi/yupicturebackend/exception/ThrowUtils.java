@@ -31,7 +31,7 @@ public class ThrowUtils {
      * @Since version-1.0
      */
     public static void throwIf(boolean condition, ErrorCode errorCode) {
-        throwIf(condition, new BusinessExeption(errorCode));
+        throwIf(condition, new BusinessException(errorCode));
     }
 
     /*
@@ -43,6 +43,6 @@ public class ThrowUtils {
      * @Since version-1.0
      */
     public static void throwIf(boolean condition, ErrorCode errorCode, String message) {
-        throwIf(condition, new BusinessExeption(errorCode, message));
+        throwIf(condition, new BusinessException(errorCode, message));
     }
 }

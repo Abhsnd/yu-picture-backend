@@ -24,8 +24,8 @@ public class GlobalExceptionHandler {
      * @Return com.yupi.yupicturebackend.common.BaseResponse<?>
      * @Since version-1.0
      */
-    @ExceptionHandler(BusinessExeption.class)
-    public BaseResponse<?> businessExceptionHandler(BusinessExeption e) {
+    @ExceptionHandler(BusinessException.class)
+    public BaseResponse<?> businessExceptionHandler(BusinessException e) {
         log.error(e.getMessage());
         return ResultUtils.error(e.getCode(), e.getMessage());
     }
