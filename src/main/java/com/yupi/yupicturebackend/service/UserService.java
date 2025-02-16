@@ -42,4 +42,7 @@ public interface UserService extends IService<User> {
 
     // 加密方法
     String getEncryptPassword(String userPassword);
+
+    // 是否为管理员
+    boolean isAdmin(User user);
 }
