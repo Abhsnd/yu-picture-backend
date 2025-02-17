@@ -3,6 +3,13 @@ package com.yupi.yupicturebackend.model.enums;
 import cn.hutool.core.util.ObjUtil;
 import lombok.Getter;
 
+/*
+ * @Author winku
+ * @Date 2025/2/17 0:50
+ * @Description 用户权限枚举类
+ * @Since version-1.0
+ */
+
 @Getter
 public enum UserRoleEnum {
 
