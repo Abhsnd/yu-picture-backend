@@ -78,6 +78,25 @@ public class PictureController {
 
     /*
      * @Author winku
+     * @Date 2025/2/18 18:58
+     * @Description 批量抓取图片 （仅管理员）
+     * @Param [pictureUploadByBatchRequest, request]
+     * @Return com.yupi.yupicturebackend.common.BaseResponse<java.lang.Integer>
+     * @Since version-1.0
+     */
+    @PostMapping("/upload/batch")
+    @AuthCheck(mustRole = UserConstant.ADMIN_ROLE)
+    public BaseResponse<Integer> uploadPictureByBatch(
+            @RequestBody PictureUploadByBatchRequest pictureUploadByBatchRequest,
+            HttpServletRequest request) {
+        ThrowUtils.throwIf(pictureUploadByBatchRequest == null, ErrorCode.PARAMS_ERROR);
+        User loginUser = userService.getLoginUser(request);
+        int uploadCount = pictureService.uploadPictureByBatch(pictureUploadByBatchRequest, loginUser);
+        return ResultUtils.success(uploadCount);
+    }
+
+    /*
+     * @Author winku
      * @Date 2025/2/14 20:43
      * @Description 删除图片
      * @Param [deleteRequest, request]

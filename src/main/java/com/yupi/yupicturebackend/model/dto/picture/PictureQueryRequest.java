@@ -4,6 +4,7 @@ import com.yupi.yupicturebackend.common.PageRequest;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -80,6 +81,11 @@ public class PictureQueryRequest extends PageRequest implements Serializable {
      * 审核信息
      */
     private String reviewMessage;
+
+    /**
+     * 审核时间
+     */
+    private Date reviewTime;
 
     /**
      * 审核人 id

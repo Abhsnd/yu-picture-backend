@@ -75,7 +75,7 @@ public class FileManager {
             // 封装返回结果
             UploadPictureResult uploadPictureResult = new UploadPictureResult();
             uploadPictureResult.setUrl(cosClientConfig.getHost() + "/" + uploadPath);
-            uploadPictureResult.setName(FileUtil.mainName(originalFilename));
+            uploadPictureResult.setPicName(FileUtil.mainName(originalFilename));
             uploadPictureResult.setPicSize(FileUtil.size(file));
             uploadPictureResult.setPicWidth(picWidth);
             uploadPictureResult.setPicHeight(picHeight);
@@ -123,7 +123,7 @@ public class FileManager {
             // 封装返回结果
             UploadPictureResult uploadPictureResult = new UploadPictureResult();
             uploadPictureResult.setUrl(cosClientConfig.getHost() + "/" + uploadPath);
-            uploadPictureResult.setName(FileUtil.mainName(originalFilename));
+            uploadPictureResult.setPicName(FileUtil.mainName(originalFilename));
             uploadPictureResult.setPicSize(FileUtil.size(file));
             uploadPictureResult.setPicWidth(picWidth);
             uploadPictureResult.setPicHeight(picHeight);
