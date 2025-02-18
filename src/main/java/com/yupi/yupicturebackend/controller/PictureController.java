@@ -60,6 +60,24 @@ public class PictureController {
 
     /*
      * @Author winku
+     * @Date 2025/2/18 10:08
+     * @Description 通过 URL 上传图片 （可重新上传）
+     * @Param [pictureUploadRequest, request]
+     * @Return com.yupi.yupicturebackend.common.BaseResponse<com.yupi.yupicturebackend.model.vo.PictureVO>
+     * @Since version-1.0
+     */
+    @PostMapping("/upload/url")
+    public BaseResponse<PictureVO> uploadPictureByUrl(
+            @RequestBody PictureUploadRequest pictureUploadRequest,
+            HttpServletRequest request) {
+        User loginUser = userService.getLoginUser(request);
+        String fileUrl = pictureUploadRequest.getFileUrl();
+        PictureVO pictureVO = pictureService.uploadPicture(fileUrl, pictureUploadRequest, loginUser);
+        return ResultUtils.success(pictureVO);
+    }
+
+    /*
+     * @Author winku
      * @Date 2025/2/14 20:43
      * @Description 删除图片
      * @Param [deleteRequest, request]

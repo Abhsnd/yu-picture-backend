@@ -2,14 +2,13 @@ package com.yupi.yupicturebackend.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.extension.service.IService;
 import com.yupi.yupicturebackend.model.dto.picture.PictureQueryRequest;
 import com.yupi.yupicturebackend.model.dto.picture.PictureReviewRequest;
 import com.yupi.yupicturebackend.model.dto.picture.PictureUploadRequest;
 import com.yupi.yupicturebackend.model.entity.Picture;
-import com.baomidou.mybatisplus.extension.service.IService;
 import com.yupi.yupicturebackend.model.entity.User;
 import com.yupi.yupicturebackend.model.vo.PictureVO;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -21,7 +20,7 @@ import javax.servlet.http.HttpServletRequest;
 public interface PictureService extends IService<Picture> {
 
     // 上传图片
-    PictureVO uploadPicture(MultipartFile multipartFile,
+    PictureVO uploadPicture(Object inputSource,
                             PictureUploadRequest pictureUploadRequest,
                             User loginUser);
 
